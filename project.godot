@@ -15,10 +15,6 @@ run/main_scene="res://Main/Main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
-[autoload]
-
-GameManager="*res://Main/game_manager.gd"
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/Basic FPS Player/plugin.cfg")
