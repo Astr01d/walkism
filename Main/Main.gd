@@ -37,7 +37,7 @@ func load_level(level, spawn_pos, need_player):
 #	this assumes we dont want level pooling which means we 
 #	need a flag system which we need anyway which kinda sucks but ok 
 	
-	if $Level.get_child_count() < 0:
+	if $Level.get_child_count() > 0:
 		var loaded_levels = $Level.get_children(true)
 		for i in range(loaded_levels.size()):
 			loaded_levels[i].queue_free()

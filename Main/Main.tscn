@@ -1,24 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://0d3dxx1eeax6"]
+[gd_scene load_steps=3 format=3 uid="uid://0d3dxx1eeax6"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1_p0gil"]
 [ext_resource type="PackedScene" uid="uid://l6xk6pq5uhcx" path="res://Main/Menu/Menu.tscn" id="2_iggaq"]
-
-[sub_resource type="Environment" id="Environment_c30j0"]
-tonemap_white = 6.25
-ssao_enabled = true
-ssao_radius = 12.65
-sdfgi_use_occlusion = true
-sdfgi_bounce_feedback = 0.78
-sdfgi_energy = 3.0
-fog_light_color = Color(0, 0, 0, 1)
-fog_density = 0.3671
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0714
-volumetric_fog_emission_energy = 256.0
-volumetric_fog_gi_inject = 2.97
-volumetric_fog_length = 20.11
-volumetric_fog_ambient_inject = 11.43
-adjustment_enabled = true
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_p0gil")
@@ -28,13 +11,6 @@ process_mode = 3
 
 [node name="Level" type="Node3D" parent="."]
 transform = Transform3D(1, 0, -1.49012e-08, 2.98023e-08, 1, -1.49012e-08, -1.49012e-08, 1.49012e-08, 1, 1.19209e-07, 2.38419e-07, -5.96046e-08)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.663388, 0.571337, 0.483208, -0.117031, -0.558594, 0.821143, 0.739067, -0.601287, -0.3037, 0, 2.82059, 0)
-shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_c30j0")
 
 [editable path="Menu"]
 [editable path="Menu/MainMenu"]

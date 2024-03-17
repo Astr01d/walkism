@@ -1,8 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://co7jgh4h2wpiq"]
+[gd_scene load_steps=3 format=3 uid="uid://co7jgh4h2wpiq"]
 
 [ext_resource type="PackedScene" uid="uid://d2al7fivt083t" path="res://Misc/Scenes/cube.tscn" id="1_1ug2g"]
 
+[sub_resource type="Environment" id="Environment_5bkb0"]
+tonemap_white = 6.25
+ssao_enabled = true
+ssao_radius = 12.65
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 0.78
+sdfgi_energy = 3.0
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.3671
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0714
+volumetric_fog_emission_energy = 256.0
+volumetric_fog_gi_inject = 2.97
+volumetric_fog_length = 20.11
+volumetric_fog_ambient_inject = 11.43
+adjustment_enabled = true
+
 [node name="World" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.663388, 0.571338, 0.483208, -0.117031, -0.558594, 0.821143, 0.739067, -0.601287, -0.303701, 0.406453, 3.26078, -3.49247)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5bkb0")
 
 [node name="Cube" parent="." instance=ExtResource("1_1ug2g")]
 transform = Transform3D(13.9428, 0, 0, 0, 1, 0, 0, 0, 13.9685, 0, -0.5, 0)
@@ -11,4 +35,37 @@ transform = Transform3D(13.9428, 0, 0, 0, 1, 0, 0, 0, 13.9685, 0, -0.5, 0)
 transform = Transform3D(0.707107, 0, -2.47487, 0, 3.9, 0, 0.707107, 0, 2.47487, 1.35575, 1.8, 2.5796)
 
 [node name="Cube3" parent="." instance=ExtResource("1_1ug2g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.406453, 0.44019, -1.49247)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.406453, 0.44019, -3.49247)
+
+[node name="Cube3" parent="Cube3" instance=ExtResource("1_1ug2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60645, 0.94019, -1.49247)
+
+[node name="Cube3" parent="Cube3/Cube3" instance=ExtResource("1_1ug2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60645, 0.94019, -1.49247)
+
+[node name="Cube3" parent="Cube3/Cube3/Cube3" instance=ExtResource("1_1ug2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60645, 0.94019, -1.49247)
+
+[node name="Cube3" parent="Cube3/Cube3/Cube3/Cube3" instance=ExtResource("1_1ug2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60645, 0.94019, -1.49247)
+
+[node name="Cube4" parent="." instance=ExtResource("1_1ug2g")]
+transform = Transform3D(13.9428, 0, 0, 0, 1, 0, 0, 0, 13.9685, 15, 4.5, -17)
+
+[node name="Cube5" parent="." instance=ExtResource("1_1ug2g")]
+transform = Transform3D(0.995257, 0, -0.340506, 0, 3.9, 0, 0.0972876, 0, 3.48339, 19.872, 6.87173, -15.2737)
+
+[node name="Cube6" parent="." instance=ExtResource("1_1ug2g")]
+transform = Transform3D(0.995257, 0, -0.340506, 0, 3.9, 0, 0.0972876, 0, 3.48339, 15.1824, 6.87173, -15.2737)
+
+[node name="Cube7" parent="." instance=ExtResource("1_1ug2g")]
+transform = Transform3D(0.995257, 0, -0.340506, 0, 3.9, 0, 0.0972876, 0, 3.48339, 9.87196, 6.87173, -15.2737)
+
+[node name="Cube8" parent="." instance=ExtResource("1_1ug2g")]
+transform = Transform3D(0.995257, 0, -0.340506, 0, 3.9, 0, 0.0972876, 0, 3.48339, 19.872, 6.87173, -21.2737)
+
+[node name="Cube9" parent="." instance=ExtResource("1_1ug2g")]
+transform = Transform3D(0.995257, 0, -0.340506, 0, 3.9, 0, 0.0972876, 0, 3.48339, 15.1824, 6.87173, -21.2737)
+
+[node name="Cube10" parent="." instance=ExtResource("1_1ug2g")]
+transform = Transform3D(0.995257, 0, -0.340506, 0, 3.9, 0, 0.0972876, 0, 3.48339, 9.87196, 6.87173, -21.2737)
