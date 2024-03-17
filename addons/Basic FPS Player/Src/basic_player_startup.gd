@@ -71,6 +71,7 @@ var head_start_pos : Vector3
 var tick = 0
 
 func _ready():
+	$Head/Camera3D.set_current(true)
 	if Engine.is_editor_hint():
 		return
 

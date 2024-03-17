@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0yj7nn33sh8e"]
+
+[ext_resource type="Texture2D" uid="uid://oca616gn1pxm" path="res://Main/Menu/baneb.png" id="1_rx1o5"]
+[ext_resource type="Script" path="res://Main/Menu/main_menu.gd" id="1_yyhu3"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yyhu3")
+
+[node name="StartContinue" type="Button" parent="."]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 411.0
+offset_right = 639.0
+offset_bottom = 455.0
+text = "play
+"
+
+[node name="Baneb" type="Sprite2D" parent="."]
+position = Vector2(568, 194)
+scale = Vector2(0.578428, 0.192737)
+texture = ExtResource("1_rx1o5")
+
+[node name="MainMenuRig" type="Marker3D" parent="."]
+
+[node name="MainMenuCam" type="Camera3D" parent="MainMenuRig"]
+transform = Transform3D(1, 0, 0, 0, 0.943205, 0.332211, 0, -0.332211, 0.943205, 0, 2.80189, 6.01361)
