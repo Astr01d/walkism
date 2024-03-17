@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://0d3dxx1eeax6"]
+
+[ext_resource type="PackedScene" uid="uid://co7jgh4h2wpiq" path="res://Misc/Scenes/world.tscn" id="1_07230"]
+[ext_resource type="Script" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="2_xlvpy"]
+[ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="3_v0ufn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l6yno"]
+
+[node name="Main" type="Node3D"]
+
+[node name="World" parent="." instance=ExtResource("1_07230")]
+
+[node name="Basic FPS Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("2_xlvpy")
+
+[node name="Head" parent="Basic FPS Player" instance=ExtResource("3_v0ufn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412659, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Basic FPS Player"]
+shape = SubResource("CapsuleShape3D_l6yno")

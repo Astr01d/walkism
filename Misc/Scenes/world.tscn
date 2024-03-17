@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://co7jgh4h2wpiq"]
+
+[ext_resource type="PackedScene" uid="uid://d2al7fivt083t" path="res://Misc/Scenes/cube.tscn" id="1_r6fum"]
+
+[node name="World" type="Node3D"]
+
+[node name="Cube" parent="." instance=ExtResource("1_r6fum")]
+transform = Transform3D(13.9428, 0, 0, 0, 1, 0, 0, 0, 13.9685, 0, -0.5, 0)
+
+[node name="Cube2" parent="." instance=ExtResource("1_r6fum")]
+transform = Transform3D(0.707107, 0, -2.47487, 0, 3.9, 0, 0.707107, 0, 2.47487, 1.35575, 1.8, 2.5796)
+
+[node name="Cube3" parent="." instance=ExtResource("1_r6fum")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.406453, 0.44019, -1.49247)
