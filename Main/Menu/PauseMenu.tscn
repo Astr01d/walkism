@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://083ytyrn8s8d"]
 
-[ext_resource type="Script" path="res://Main/PauseMenu/PauseMenu.gd" id="1_1q22i"]
+[ext_resource type="Script" path="res://Main/Menu/PauseMenu.gd" id="1_1q22i"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_42w8r"]
 action = &"pause_button"
