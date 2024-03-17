@@ -1,14 +1,37 @@
-[gd_scene load_steps=6 format=3 uid="uid://0d3dxx1eeax6"]
+[gd_scene load_steps=8 format=3 uid="uid://0d3dxx1eeax6"]
 
 [ext_resource type="PackedScene" uid="uid://co7jgh4h2wpiq" path="res://Misc/Scenes/world.tscn" id="1_07230"]
+[ext_resource type="Script" path="res://Main/Main.gd" id="1_p0gil"]
+[ext_resource type="PackedScene" uid="uid://083ytyrn8s8d" path="res://Main/PauseMenu/PauseMenu.tscn" id="2_rt615"]
 [ext_resource type="Script" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="2_xlvpy"]
 [ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="3_v0ufn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l6yno"]
 
 [sub_resource type="Environment" id="Environment_c30j0"]
+tonemap_white = 6.25
+ssao_enabled = true
+ssao_radius = 12.65
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 0.78
+sdfgi_energy = 3.0
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.3671
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0714
+volumetric_fog_emission_energy = 256.0
+volumetric_fog_gi_inject = 2.97
+volumetric_fog_length = 20.11
+volumetric_fog_ambient_inject = 11.43
+adjustment_enabled = true
 
 [node name="Main" type="Node3D"]
+process_mode = 1
+process_priority = -1
+script = ExtResource("1_p0gil")
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_rt615")]
+visible = false
 
 [node name="World" parent="." instance=ExtResource("1_07230")]
 
@@ -18,6 +41,8 @@ script = ExtResource("2_xlvpy")
 SPEED = 6.0
 IN_AIR_ACCEL = 8.0
 JUMP_VELOCITY = 5.5
+HEAD_BOB = false
+HEAD_BOB_AMPLITUDE = 0.1
 
 [node name="Head" parent="Basic FPS Player" instance=ExtResource("3_v0ufn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412659, 0)
