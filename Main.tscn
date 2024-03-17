@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://0d3dxx1eeax6"]
+[gd_scene load_steps=6 format=3 uid="uid://0d3dxx1eeax6"]
 
 [ext_resource type="PackedScene" uid="uid://co7jgh4h2wpiq" path="res://Misc/Scenes/world.tscn" id="1_07230"]
 [ext_resource type="Script" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="2_xlvpy"]
 [ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="3_v0ufn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l6yno"]
+
+[sub_resource type="Environment" id="Environment_c30j0"]
 
 [node name="Main" type="Node3D"]
 
@@ -13,9 +15,19 @@
 [node name="Basic FPS Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 script = ExtResource("2_xlvpy")
+SPEED = 6.0
+IN_AIR_ACCEL = 8.0
+JUMP_VELOCITY = 5.5
 
 [node name="Head" parent="Basic FPS Player" instance=ExtResource("3_v0ufn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412659, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Basic FPS Player"]
 shape = SubResource("CapsuleShape3D_l6yno")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.663388, 0.571337, 0.483208, -0.117031, -0.558594, 0.821143, 0.739067, -0.601287, -0.3037, 0, 2.82059, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_c30j0")

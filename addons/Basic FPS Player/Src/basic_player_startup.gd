@@ -41,6 +41,7 @@ func _enter_tree():
 @export_subgroup("Mouse")
 @export var MOUSE_ACCEL := true
 @export var KEY_BIND_MOUSE_SENS := 0.005
+@export var KEY_BIND_CONT_SENS := 0.04
 @export var KEY_BIND_MOUSE_ACCEL := 50
 @export_subgroup("Movement")
 @export var KEY_BIND_UP := "ui_up"
@@ -111,12 +112,14 @@ func _input(event):
 	# Listen for mouse movement and check if mouse is captured
 	if event is InputEventMouseMotion && Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		set_rotation_target(event.relative)
+	else:
+		set_rotation_target(Vector2(0,0))
 
 func set_rotation_target(mouse_motion : Vector2):
 	# Add player target to the mouse -x input
-	rotation_target_player += -mouse_motion.x * KEY_BIND_MOUSE_SENS
+	rotation_target_player += (-mouse_motion.x * KEY_BIND_MOUSE_SENS) + (-Input.get_axis("Joypad_R_Left","Joypad_R_Right") * KEY_BIND_CONT_SENS)
 	# Add head target to the mouse -y input
-	rotation_target_head += -mouse_motion.y * KEY_BIND_MOUSE_SENS
+	rotation_target_head += (-mouse_motion.y * KEY_BIND_MOUSE_SENS) + (Input.get_axis("Joypad_R_Down","Joypad_R_Up") * KEY_BIND_CONT_SENS)
 	# Clamp rotation
 	if CLAMP_HEAD_ROTATION:
 		rotation_target_head = clamp(rotation_target_head, deg_to_rad(CLAMP_HEAD_ROTATION_MIN), deg_to_rad(CLAMP_HEAD_ROTATION_MAX))
