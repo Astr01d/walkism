@@ -2,6 +2,7 @@ extends Control
 
 
 func _ready():
+	$StartContinue.grab_focus()
 	$MainMenuRig/MainMenuCam.set_current(true)
 	pass
 

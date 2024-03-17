@@ -1,13 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://083ytyrn8s8d"]
+[gd_scene load_steps=3 format=3 uid="uid://083ytyrn8s8d"]
 
 [ext_resource type="Script" path="res://Main/Menu/PauseMenu.gd" id="1_1q22i"]
 [ext_resource type="Texture2D" uid="uid://oca616gn1pxm" path="res://Main/Menu/baneb.png" id="2_wxgn6"]
-
-[sub_resource type="InputEventAction" id="InputEventAction_42w8r"]
-action = &"pause_button"
-
-[sub_resource type="Shortcut" id="Shortcut_1mbi2"]
-events = [SubResource("InputEventAction_42w8r")]
 
 [node name="PauseMenu" type="Node2D"]
 process_mode = 2
@@ -38,7 +32,6 @@ layout_mode = 2
 focus_neighbor_top = NodePath("../Quit")
 focus_neighbor_bottom = NodePath("../Quit")
 mouse_default_cursor_shape = 16
-shortcut = SubResource("Shortcut_1mbi2")
 text = "unpause n shit"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
