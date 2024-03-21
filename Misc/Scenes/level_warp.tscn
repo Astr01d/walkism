@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://l4c71otfxaie"]
+
+[ext_resource type="Script" path="res://Misc/Scenes/level_warp.gd" id="1_nmx0p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1qsoy"]
+
+[node name="LevelWarp" type="Area3D"]
+script = ExtResource("1_nmx0p")
+target_level = "test_level"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_1qsoy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -50,7 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60645, 0.94019, -1.49247)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60645, 0.94019, -1.49247)
 
 [node name="Cube4" parent="." instance=ExtResource("1_1ug2g")]
-transform = Transform3D(13.9428, 0, 0, 0, 1, 0, 0, 0, 13.9685, 15, 4.5, -17)
+transform = Transform3D(13.9428, 0, 0, 0, 1, 0, 0, 0, 13.9685, 14, 4.5, -17)
 
 [node name="Cube5" parent="." instance=ExtResource("1_1ug2g")]
 transform = Transform3D(0.995257, 0, -0.340506, 0, 3.9, 0, 0.0972876, 0, 3.48339, 19.872, 6.87173, -15.2737)

@@ -13,6 +13,6 @@ func _on_button_pressed():
 
 
 func _on_quit_pressed():
-	OS.alert("meow","meow")
-	get_tree().quit()
+	$"..".pause_unpause()
+	$"..".return_to_main_menu()
 	pass

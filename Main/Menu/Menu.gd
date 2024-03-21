@@ -2,12 +2,19 @@ extends Node
 
 
 var game_paused = false
+@onready var main_scene = $".."
 
 func _ready():
 	$MainMenu.show()
-	$"..".load_level("test",Vector3(0,1,0),false)
+	main_scene.load_level("test_level")
 	pass
 
+func return_to_main_menu():
+	if main_scene.player_scene != null:
+		main_scene.player_scene.free()
+	$MainMenu.show()
+	$MainMenu.start()
+	pass
 #pause shit
 func _process(delta):
 	
@@ -29,6 +36,8 @@ func pause_unpause():
 		
 
 func _on_start_continue_pressed():
-	$"..".load_level($"..".current_save.current_level,Vector3(0,1,0),true)
+#	replace with start game function later
+	main_scene.setup_player()
+	main_scene.load_level("test_spire")
 	$MainMenu.hide()
 	
