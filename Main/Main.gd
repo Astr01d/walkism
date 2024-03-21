@@ -38,6 +38,8 @@ func _ready():
 
 
 func setup_player():
+	if player_scene != null:
+		player_scene.free()
 	
 	var loaded_player_scene = load("res://Main/Player.tscn")
 	player_scene = loaded_player_scene.instantiate()
@@ -68,8 +70,10 @@ func load_level(level):
 	pass
 
 func warp_player(target_level, player_transform):
+	player_scene.position = player_transform.origin
+	#player_scene.transform = player_scene.transform.rotated(Vector3.UP,play)
+	player_scene.transform.orthonormalized()
 	load_level(target_level)
-	
 	pass
 	
 func _process(delta):
