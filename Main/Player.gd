@@ -49,16 +49,20 @@ func _process(delta):
 	var controller_input_r : Vector2
 	controller_input_r.y = Input.get_axis("Joypad_R_Right","Joypad_R_Left")
 	controller_input_r.x = Input.get_axis("Joypad_R_Up","Joypad_R_Down")
-	
-	controller_input_r = controller_input_r.limit_length(.5) * 2
+#	magic number hell
+	controller_input_r = (controller_input_r.limit_length(.2) * 5) * .8
 	print("view", controller_input_r)
+	
 #	combining mouse n controller meow
 	var head_rot = controller_input_r + mouse_input 
+	
 #	applying head and cam rotation
 	self.transform = self.transform.rotated_local(Vector3.UP, head_rot.y * SENSITIVITY)
 	$Head.transform = $Head.transform.rotated_local(Vector3.LEFT, head_rot.x * SENSITIVITY)
+	
 #	resetting the mouse input
 	mouse_input = Vector2.ZERO
+	
 #	clamping head rotation meow
 	$Head.rotation.x = clamp($Head.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 	
