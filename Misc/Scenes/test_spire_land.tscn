@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://buhcu21ay4vsg"]
+[gd_scene load_steps=5 format=3 uid="uid://buhcu21ay4vsg"]
 
 [ext_resource type="PackedScene" uid="uid://d2al7fivt083t" path="res://Misc/Scenes/cube.tscn" id="1_g32i0"]
 [ext_resource type="PackedScene" uid="uid://l4c71otfxaie" path="res://Misc/Scenes/level_warp.tscn" id="2_ffxx5"]
+[ext_resource type="Texture2D" uid="uid://oca616gn1pxm" path="res://Main/Menu/baneb.png" id="2_yy2kq"]
 
 [sub_resource type="Environment" id="Environment_huu1o"]
 background_mode = 1
-background_color = Color(0.180392, 0.0980392, 1, 1)
+background_color = Color(0, 0, 1, 1)
 ambient_light_source = 2
-glow_enabled = true
-fog_enabled = true
+tonemap_white = 0.47
 fog_light_color = Color(0, 0, 0, 1)
 fog_light_energy = 6.77
 fog_sun_scatter = 1.0
@@ -85,16 +85,17 @@ spot_range = 17.9208
 spot_angle = 53.4375
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.992869, 0.0871814, 0.0813082, -0.0869633, 0.0631549, 0.994208, 0.0815414, -0.994189, 0.0702861, 10.7238, 8.00423, -2.46736)
-light_energy = 90.0
+transform = Transform3D(0.991677, 0.100603, 0.0803513, -0.0492411, -0.280286, 0.958653, 0.118965, -0.95463, -0.272999, -7.01255, 6.03903, -20.4315)
+light_energy = 16.0
+light_projector = ExtResource("2_yy2kq")
 shadow_enabled = true
-spot_range = 17.9208
-spot_angle = 53.4375
+spot_range = 15.0155
+spot_angle = 59.514
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.892563, -0.229222, -0.388315, 0.340456, -0.222088, 0.913656, -0.29567, -0.9477, -0.120187, -10.6177, 12.7436, -15.1497)
 light_color = Color(0.301961, 0.490196, 1, 1)
-light_energy = 200.0
+light_energy = 16.0
 shadow_enabled = true
 spot_range = 17.9208
 spot_angle = 53.4375

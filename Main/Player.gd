@@ -58,7 +58,8 @@ func _process(delta):
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input_dir : Vector2
+	input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 	if input_dir:
 		direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -75,13 +76,5 @@ func _process(delta):
 	velocity.x = direction.x * acceleration
 	velocity.z = direction.z * acceleration
 	print(direction)
-	
-	#if direction:
-		#velocity.x = move_toward(velocity.x, direction.x * speed, 4)
-		
-	#else:
-		#velocity.x = move_toward(velocity.x, 0, 1)
-		#velocity.z = move_toward(velocity.z, 0, 1)
-	
 	
 	move_and_slide()

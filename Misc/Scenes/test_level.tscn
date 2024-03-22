@@ -48,7 +48,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60645, 0.94019, -1.49247)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60645, 0.94019, -1.49247)
 
 [node name="Cube3" parent="Cube3/Cube3/Cube3/Cube3" instance=ExtResource("1_1ug2g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60645, 0.94019, -1.49247)
+transform = Transform3D(-2.52941, 0, -2.43327, 0, 1, 0, -1.8781, 0, 3.27712, 2.21347, 0.669399, -2.31001)
 
 [node name="Cube4" parent="." instance=ExtResource("1_1ug2g")]
 transform = Transform3D(13.9428, 0, 0, 0, 1, 0, 0, 0, 13.9685, 14, 4.5, -17)
@@ -73,9 +73,6 @@ transform = Transform3D(-0.0852213, 0, -5.08141, 0, 3.9, 0, 1.03414, 0, -0.41875
 
 [node name="Cube12" parent="." instance=ExtResource("1_1ug2g")]
 transform = Transform3D(-0.0211668, -0.0771733, -5.97515, -1.04106, -1.70727e-07, 0.121534, -0.000417555, 3.9125, -0.117858, 17.4283, 8.46031, -20.9483)
-
-[node name="Cube10" parent="." instance=ExtResource("1_1ug2g")]
-transform = Transform3D(6.7, 0, 0, 0, 6.7, 0, 0, 0, 6.7, -96.9, -28.5, 119.7)
 
 [node name="SpawnFromSpire" type="Marker3D" parent="."]
 transform = Transform3D(-0.999258, 0, -0.0385274, 0, 1, 0, 0.0385274, 0, -0.999258, 17.6746, 5.05545, -19.7013)
