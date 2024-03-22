@@ -6,7 +6,7 @@ var acceleration : float
 var sprint = 1.5
 const PLAYER_SPEED : float = 7
 const JUMP_VELOCITY = 6
-const SENSITIVITY = .15
+const SENSITIVITY = .10
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var game_gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -41,12 +41,17 @@ func _process(delta):
 		gravity = lerp(game_gravity, game_gravity/2, Input.get_action_strength("ui_accept"))
 		velocity.y -= gravity * delta
 #	jump stuff
+
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 #	controller viewing stuff
+
 	var controller_input_r : Vector2
-	controller_input_r.y = Input.get_axis("Joypad_R_Right","Joypad_R_Left") * .4
-	controller_input_r.x = Input.get_axis("Joypad_R_Up","Joypad_R_Down") * .4
+	controller_input_r.y = Input.get_axis("Joypad_R_Right","Joypad_R_Left")
+	controller_input_r.x = Input.get_axis("Joypad_R_Up","Joypad_R_Down")
+	
+	controller_input_r = controller_input_r.limit_length(.5) * 2
+	print("view", controller_input_r)
 #	combining mouse n controller meow
 	var head_rot = controller_input_r + mouse_input 
 #	applying head and cam rotation
@@ -71,7 +76,7 @@ func _process(delta):
 	keyboard_input = lerp(keyboard_input, target_kb_input, .3)
 
 
-	input_dir = controller_input.limit_length(1.0) + keyboard_input.limit_length(1.0)
+	input_dir = (controller_input.limit_length(.3) * (1 / .3)) + keyboard_input.limit_length(1.0)
 	
 	print(input_dir)
 	
