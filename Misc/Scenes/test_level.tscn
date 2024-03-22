@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://co7jgh4h2wpiq"]
+[gd_scene load_steps=4 format=3 uid="uid://co7jgh4h2wpiq"]
 
 [ext_resource type="PackedScene" uid="uid://d2al7fivt083t" path="res://Misc/Scenes/cube.tscn" id="1_1ug2g"]
+[ext_resource type="PackedScene" uid="uid://l4c71otfxaie" path="res://Misc/Scenes/level_warp.tscn" id="2_uoop0"]
 
 [sub_resource type="Environment" id="Environment_5bkb0"]
 tonemap_white = 6.25
@@ -67,5 +68,20 @@ transform = Transform3D(0.995257, 0, -0.340506, 0, 3.9, 0, 0.0972876, 0, 3.48339
 [node name="Cube9" parent="." instance=ExtResource("1_1ug2g")]
 transform = Transform3D(0.995257, 0, -0.340506, 0, 3.9, 0, 0.0972876, 0, 3.48339, 15.1824, 6.87173, -21.2737)
 
+[node name="Cube11" parent="." instance=ExtResource("1_1ug2g")]
+transform = Transform3D(-0.0852213, 0, -5.08141, 0, 3.9, 0, 1.03414, 0, -0.41875, 17.2347, 6.87173, -22.7567)
+
+[node name="Cube12" parent="." instance=ExtResource("1_1ug2g")]
+transform = Transform3D(-0.0211668, -0.0771733, -5.97515, -1.04106, -1.70727e-07, 0.121534, -0.000417555, 3.9125, -0.117858, 17.4283, 8.46031, -20.9483)
+
 [node name="Cube10" parent="." instance=ExtResource("1_1ug2g")]
-transform = Transform3D(0.995257, 0, -0.340506, 0, 3.9, 0, 0.0972876, 0, 3.48339, 9.87196, 6.87173, -21.2737)
+transform = Transform3D(6.7, 0, 0, 0, 6.7, 0, 0, 0, 6.7, -96.9, -28.5, 119.7)
+
+[node name="SpawnFromSpire" type="Marker3D" parent="."]
+transform = Transform3D(-0.999258, 0, -0.0385274, 0, 1, 0, 0.0385274, 0, -0.999258, 17.6746, 5.05545, -19.7013)
+gizmo_extents = 0.96
+
+[node name="WarpToSpire" parent="." instance=ExtResource("2_uoop0")]
+transform = Transform3D(3.75145, 0, 0, 0, 5.55475, 0, 0, 0, 1, 17.5287, 5.0012, -21.561)
+target_level = "test_spire"
+target_position = "SpawnFromTest"

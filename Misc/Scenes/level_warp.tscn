@@ -4,11 +4,13 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1qsoy"]
 
-[node name="LevelWarp" type="Area3D"]
+[node name="LevelWarp" type="Node3D"]
 script = ExtResource("1_nmx0p")
-target_level = "test_level"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area"]
 shape = SubResource("BoxShape3D_1qsoy")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area" to="." method="_on_body_entered"]

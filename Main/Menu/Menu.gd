@@ -15,6 +15,8 @@ func return_to_main_menu():
 	$MainMenu.show()
 	$MainMenu.start()
 	pass
+	
+	
 #pause shit
 func _process(delta):
 	
@@ -24,9 +26,10 @@ func _process(delta):
 
 func pause_unpause():
 		game_paused = !game_paused
-		print(game_paused)
+		
 		$PauseMenu.visible = game_paused
 		get_tree().paused = game_paused
+		
 		$PauseMenu.pause_menu_setup()
 		
 		if game_paused:

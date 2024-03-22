@@ -31,6 +31,7 @@ class PlayerData:
 
 
 func _ready():
+	#Engine.time_scale = .2
 	player_data = PlayerData.new()
 	
 	player_data.current_level = "test_spire"
@@ -69,11 +70,22 @@ func load_level(level):
 	$Level.add_child(level_scene)
 	pass
 
-func warp_player(target_level, player_transform):
-	player_scene.position = player_transform.origin
-	#player_scene.transform = player_scene.transform.rotated(Vector3.UP,play)
-	player_scene.transform.orthonormalized()
+
+func warp_player(target_level, target_node, player_rot):
+	var target_transform
+	
 	load_level(target_level)
+	
+	var target_node_in_scene = $Level.find_child(target_node, true, false)
+	
+	if target_node_in_scene != null:
+		target_transform = target_node_in_scene.transform
+	else:
+		target_transform = Transform3D()
+	
+	player_scene.position = target_transform.origin
+	player_scene.transform.basis = target_transform.basis
+	
 	pass
 	
 func _process(delta):
