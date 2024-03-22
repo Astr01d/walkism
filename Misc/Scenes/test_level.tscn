@@ -1,24 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://co7jgh4h2wpiq"]
+[gd_scene load_steps=3 format=3 uid="uid://co7jgh4h2wpiq"]
 
 [ext_resource type="PackedScene" uid="uid://d2al7fivt083t" path="res://Misc/Scenes/cube.tscn" id="1_1ug2g"]
 [ext_resource type="PackedScene" uid="uid://l4c71otfxaie" path="res://Misc/Scenes/level_warp.tscn" id="2_uoop0"]
-
-[sub_resource type="Environment" id="Environment_5bkb0"]
-tonemap_white = 6.25
-ssao_enabled = true
-ssao_radius = 12.65
-sdfgi_use_occlusion = true
-sdfgi_bounce_feedback = 0.78
-sdfgi_energy = 3.0
-fog_light_color = Color(0, 0, 0, 1)
-fog_density = 0.3671
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0714
-volumetric_fog_emission_energy = 256.0
-volumetric_fog_gi_inject = 2.97
-volumetric_fog_length = 20.11
-volumetric_fog_ambient_inject = 11.43
-adjustment_enabled = true
 
 [node name="World" type="Node3D"]
 
@@ -27,7 +10,6 @@ transform = Transform3D(0.663388, 0.571338, 0.483208, -0.117031, -0.558594, 0.82
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_5bkb0")
 
 [node name="Cube" parent="." instance=ExtResource("1_1ug2g")]
 transform = Transform3D(13.9428, 0, 0, 0, 1, 0, 0, 0, 13.9685, 0, -0.5, 0)
