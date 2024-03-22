@@ -45,8 +45,8 @@ func _process(delta):
 		velocity.y = JUMP_VELOCITY
 #	controller viewing stuff
 	var controller_input_r : Vector2
-	controller_input_r.y = Input.get_axis("Joypad_R_Right","Joypad_R_Left") 
-	controller_input_r.x = Input.get_axis("Joypad_R_Up","Joypad_R_Down")
+	controller_input_r.y = Input.get_axis("Joypad_R_Right","Joypad_R_Left") * .4
+	controller_input_r.x = Input.get_axis("Joypad_R_Up","Joypad_R_Down") * .4
 #	combining mouse n controller meow
 	var head_rot = controller_input_r + mouse_input 
 #	applying head and cam rotation
