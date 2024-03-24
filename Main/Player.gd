@@ -13,6 +13,8 @@ var game_gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var gravity = 0 
 var direction : Vector3
 var keyboard_input : Vector2
+var controller_input : Vector2
+var input_damping = .25
 
 var mouse_input : Vector2
 
@@ -50,7 +52,7 @@ func _process(delta):
 	controller_input_r.y = Input.get_axis("Joypad_R_Right","Joypad_R_Left")
 	controller_input_r.x = Input.get_axis("Joypad_R_Up","Joypad_R_Down")
 #	magic number hell
-	controller_input_r = (controller_input_r.limit_length(.2) * 5) * .8
+	controller_input_r = (controller_input_r.limit_length(.2) * 5) * .7
 	print("view", controller_input_r)
 	
 #	combining mouse n controller meow
@@ -68,18 +70,21 @@ func _process(delta):
 	
 	
 	var input_dir : Vector2
-	var controller_input : Vector2
-
+	var target_controller_input : Vector2
+	
 	var target_kb_input : Vector2
 	
 #	read controller input
-	controller_input = Input.get_vector("Joypad_L_Left", "Joypad_L_Right", "Joypad_L_Up", "Joypad_L_Down")
+	target_controller_input = Input.get_vector("Joypad_L_Left", "Joypad_L_Right", "Joypad_L_Up", "Joypad_L_Down")
 #	read keyboard input
 	target_kb_input = Input.get_vector("Keyboard_L_Left", "Keyboard_L_Right", "Keyboard_L_Up", "Keyboard_L_Down")
 	
-	keyboard_input = lerp(keyboard_input, target_kb_input, .3)
-
-
+	input_damping = lerp(.3, .1 , !is_on_floor())
+	
+	keyboard_input = lerp(keyboard_input, target_kb_input, input_damping)
+	
+	controller_input = lerp(controller_input, target_controller_input, input_damping)
+	
 	input_dir = (controller_input.limit_length(.3) * (1 / .3)) + keyboard_input.limit_length(1.0)
 	
 	print(input_dir)

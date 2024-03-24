@@ -6,6 +6,7 @@ func _ready():
 	pass
 
 func start():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$StartContinue.grab_focus()
 	$MainMenuRig/MainMenuCam.set_current(true)
 

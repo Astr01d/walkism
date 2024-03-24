@@ -3,7 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://g3ruusb1v3q7" path="res://Misc/Textures/grid.png" id="1_0ou8l"]
 
 [resource]
+shading_mode = 2
+diffuse_mode = 3
 albedo_texture = ExtResource("1_0ou8l")
+roughness = 0.0
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 uv1_world_triplanar = true

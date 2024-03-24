@@ -66,24 +66,26 @@ transform = Transform3D(2.16102, 0, -0.577678, 0, 3.36749, 0, 1.50105, 0, 0.8316
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 0.0851562, 0.996368, 0, -0.996368, 0.0851562, 0, 21.6563, -2.17126)
-light_energy = 90.0
+transform = Transform3D(1, 0, 0, 0, 0.0851562, 0.996368, 0, -0.996368, 0.0851562, 0.815558, 21.7766, -2.42254)
+light_color = Color(0, 0.635294, 0.133333, 1)
+light_energy = 16.0
 shadow_enabled = true
-spot_range = 17.9208
+spot_range = 29.037
 spot_angle = 53.4375
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.992639, 0.120633, 0.0107314, 0.0226882, -0.272267, 0.961954, 0.118965, -0.95463, -0.272999, -7.01255, 7.73633, -15.9184)
+transform = Transform3D(0.992639, 0.120633, 0.0107314, 0.0226882, -0.272267, 0.961954, 0.118965, -0.95463, -0.273, -7.30264, 7.02404, -16.0593)
 light_color = Color(1, 0.901961, 0.694118, 1)
 light_energy = 16.0
 light_indirect_energy = 8.037
 light_volumetric_fog_energy = 5.456
 light_projector = ExtResource("2_yy2kq")
 shadow_enabled = true
+shadow_bias = 0.113
 shadow_blur = 0.218
 distance_fade_enabled = true
 distance_fade_begin = 11.65
-spot_range = 15.0155
+spot_range = 10.248
 spot_angle = 59.514
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="WorldEnvironment"]

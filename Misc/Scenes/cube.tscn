@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://dkmy2uakint20" path="res://Misc/Resources/grid_material.tres" id="1_n3s7n"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_x2h6g"]
+[sub_resource type="BoxMesh" id="BoxMesh_ikure"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6758m"]
 
@@ -10,7 +10,7 @@
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 material_override = ExtResource("1_n3s7n")
-mesh = SubResource("BoxMesh_x2h6g")
+mesh = SubResource("BoxMesh_ikure")
 
 [node name="Collision" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_6758m")
