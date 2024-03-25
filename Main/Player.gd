@@ -5,7 +5,7 @@ var speed : float
 var acceleration : float
 var sprint = 1.5
 const PLAYER_SPEED : float = 7
-const JUMP_VELOCITY = 6
+const JUMP_VELOCITY = 7 
 const SENSITIVITY = .10
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -42,6 +42,7 @@ func _process(delta):
 	if not is_on_floor():
 		gravity = lerp(game_gravity, game_gravity/2, Input.get_action_strength("ui_accept"))
 		velocity.y -= gravity * delta
+	velocity.y = clamp(velocity.y, -JUMP_VELOCITY * 3, JUMP_VELOCITY)
 #	jump stuff
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

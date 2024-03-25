@@ -6,6 +6,9 @@
 [node name="Main" type="Node3D"]
 script = ExtResource("1_p0gil")
 
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(640, 480)
+
 [node name="Menu" parent="." instance=ExtResource("2_iggaq")]
 process_mode = 3
 
