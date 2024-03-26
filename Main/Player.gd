@@ -53,7 +53,7 @@ func _process(delta):
 	controller_input_r.y = Input.get_axis("Joypad_R_Right","Joypad_R_Left")
 	controller_input_r.x = Input.get_axis("Joypad_R_Up","Joypad_R_Down")
 #	magic number hell
-	controller_input_r = (controller_input_r.limit_length(.2) * 5) * (delta * 30)
+	controller_input_r = (controller_input_r.limit_length(.5) * (1/.5)) * (delta * 50)
 	
 #	combining mouse n controller meow
 	var head_rot = controller_input_r + mouse_input 
