@@ -42,7 +42,7 @@ func _process(delta):
 	if not is_on_floor():
 		gravity = lerp(game_gravity, game_gravity/2, Input.get_action_strength("ui_accept"))
 		velocity.y -= gravity * delta
-	velocity.y = clamp(velocity.y, -JUMP_VELOCITY * 3, JUMP_VELOCITY)
+	velocity.y = clamp(velocity.y, -JUMP_VELOCITY * 2.5, JUMP_VELOCITY)
 #	jump stuff
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -54,7 +54,6 @@ func _process(delta):
 	controller_input_r.x = Input.get_axis("Joypad_R_Up","Joypad_R_Down")
 #	magic number hell
 	controller_input_r = (controller_input_r.limit_length(.2) * 5) * .7
-	print("view", controller_input_r)
 	
 #	combining mouse n controller meow
 	var head_rot = controller_input_r + mouse_input 
@@ -88,7 +87,6 @@ func _process(delta):
 	
 	input_dir = (controller_input.limit_length(.3) * (1 / .3)) + keyboard_input.limit_length(1.0)
 	
-	print(input_dir)
 	
 	if (target_kb_input or controller_input):
 		direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y))
